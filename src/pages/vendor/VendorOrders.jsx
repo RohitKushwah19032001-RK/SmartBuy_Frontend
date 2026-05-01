@@ -12,7 +12,7 @@ const VendorOrders = () => {
 
   const token = localStorage.getItem("vendorToken");
 
-  // ✅ FETCH ORDERS
+
   const fetchOrders = async () => {
     try {
       const { data } = await axios.get(
