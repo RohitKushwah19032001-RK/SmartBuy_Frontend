@@ -107,7 +107,7 @@
     width: 95%;
     padding: 10px 16px;
     border-radius: 14px;
-
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;   /* 🔥 IMPORTANT */
     height: auto;      /* 🔥 FIX HEIGHT ISSUE */
