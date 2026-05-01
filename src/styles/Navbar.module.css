@@ -116,7 +116,7 @@
 
   /* LOGO */
   .logo {
-    flex: none;
+    flex: 1;
   }
 
   .logo img {
