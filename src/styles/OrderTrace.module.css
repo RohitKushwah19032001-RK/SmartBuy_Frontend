@@ -1,0 +1,228 @@
+.container{
+ padding-left:160px;
+ padding-right:160px;
+}
+
+.container h1{
+ margin:20px;
+ text-align:center;
+ font-family: "Prata";
+}
+
+/* CARD */
+.card{
+ border:1px solid #ddd;
+ padding:20px;
+ margin-bottom:20px;
+ border-radius:10px;
+ background:white;
+
+ box-shadow:
+ 0 8px 20px rgba(0,0,0,0.08),
+ 0 2px 6px rgba(0,0,0,0.05);
+
+ transition:0.3s ease;
+}
+
+.card:hover{
+ transform:scale(1.02);
+ box-shadow:
+ 0 14px 30px rgba(0,0,0,0.12),
+ 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* TOP ROW */
+.topRow{
+ display:flex;
+ justify-content:flex-start;
+ align-items:center;
+ gap:30px;
+ flex-wrap: nowrap;
+}
+
+/* PRODUCTS */
+.products{
+ min-width:600px;
+ flex:1;
+}
+
+/* ITEM */
+.item{
+ display:flex;
+ gap:15px;
+ margin-bottom:10px;
+}
+
+.item img{
+ width:100px;
+ height:100px;
+ object-fit:cover;
+ border-radius:6px;
+}
+
+/* INFO */
+.info{
+ min-width:400px;
+ text-align:left;
+ gap:6px;
+}
+
+.info p{
+ text-align:left;
+}
+
+/* CANCEL */
+.cancelBtn{
+ margin-top:10px;
+ background:red;
+ color:white;
+ border:none;
+ padding:8px 16px;
+ cursor:pointer;
+ border-radius:6px;
+ width:max-content;
+}
+
+.can1{
+ min-width:200px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+
+/* TIMELINE */
+.timeline{
+ display:flex;
+ justify-content:space-between;
+ margin-top:20px;
+ border-top:2px solid #eee;
+ padding-top:10px;
+}
+
+.step{
+ font-size:13px;
+ color:gray;
+}
+
+.stepActive{
+ font-size:13px;
+ color:green;
+ font-weight:bold;
+}
+
+.cancelText{
+ color:red;
+ margin-top:10px;
+ font-weight:bold;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+
+ .container{
+  padding-left:60px;
+  padding-right:60px;
+  padding-top: 40px;
+ }
+
+ .products{
+  min-width:auto;
+ }
+
+ .info{
+  min-width:280px;
+ }
+
+ .topRow{
+  gap:20px;
+ }
+
+ .item img{
+  width:80px;
+  height:80px;
+ }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+ .container{
+  padding-left:15px;
+  padding-right:15px;
+  padding-top: 40px;
+ }
+
+ .container h1{
+  font-size:22px;
+ }
+
+ .topRow{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:15px;
+ }
+
+ .products{
+  width:100%;
+ }
+
+ .info{
+  width:100%;
+  min-width:auto;
+ }
+
+ .item{
+  flex-direction:row;
+ }
+
+ .item img{
+  width:70px;
+  height:70px;
+ }
+
+ .cancelBtn{
+  width:100%;
+ }
+
+ .timeline{
+  flex-direction:column;
+  gap:10px;
+  align-items:flex-start;
+ }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+
+ .container h1{
+  font-size:18px;
+ }
+
+ .item{
+  flex-direction:column;
+ }
+
+ .item img{
+  width:100%;
+  height:160px;
+ }
+
+ .info{
+  font-size:14px;
+ }
+
+ .step,
+ .stepActive{
+  font-size:12px;
+ }
+
+ .cancelBtn{
+  padding:10px;
+ }
+}

@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* 👈 mobile safe padding */
+  background-color: #f1f5f9;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%; /* 👈 responsive fix */
+}
+
+.title {
+  font-size: 28px;
+  color: #16a34a;
+  margin-bottom: 15px;
+}
+
+.message {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 25px;
+}
+
+.homeButton {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.homeButton:hover {
+  background-color: #2563eb;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .card {
+    padding: 25px 15px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+
+  .homeButton {
+    width: 100%;
+  }
+}

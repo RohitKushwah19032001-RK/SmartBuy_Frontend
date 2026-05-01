@@ -1,0 +1,181 @@
+.container {
+  padding: 5px 140px;
+  background: #f5f7fa;
+  text-align: left;
+}
+
+/* SHOP CARD */
+.shopCard {
+  display: flex;
+  gap: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  align-items: flex-start;
+}
+
+/* IMAGE */
+.shopImage {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* INFO */
+.shopInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.shopInfo p {
+  text-align: left;
+}
+
+.desc {
+  color: #555;
+  text-align: left;
+}
+
+/* TITLE */
+.title {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Prata";
+  cursor: pointer;
+}
+
+.title:hover {
+  color: #2563eb;
+}
+
+/* PRODUCT GRID */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* PRODUCT CARD */
+.productCard {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+}
+
+/* PRODUCT IMAGE */
+.productCard img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* REELS GRID */
+.reelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* REEL CARD */
+.reelCard {
+  height: 520px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.reelCard:hover {
+  transform: translateY(-5px);
+}
+
+/* VIDEO */
+.reelCard video {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+  .container {
+    padding: 10px 40px;
+  }
+
+  .productGrid,
+  .reelGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shopImage {
+    width: 220px;
+    height: 260px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 15px;
+  }
+
+  .shopCard {
+    flex-direction: column;
+  }
+
+  .shopImage {
+    width: 100%;
+    height: 240px;
+  }
+
+  .productGrid,
+  .reelGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productCard img {
+    height: 280px;
+  }
+
+  .reelCard,
+  .reelCard video {
+    height: 420px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+  .productCard img {
+    height: 240px;
+  }
+
+  .reelCard,
+  .reelCard video {
+    height: 380px;
+  }
+}

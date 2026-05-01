@@ -1,0 +1,142 @@
+/* PAGE BACKGROUND */
+body {
+  background: #f6f6f6;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN CONTAINER */
+.container {
+  width: 600px;
+  max-width: 95%;
+  margin: 80px auto;
+  padding: 40px 35px;
+  background: #ffffff;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+/* ROW */
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row input {
+  flex: 1;
+}
+
+/* TITLE */
+.title {
+  font-family: 'Prata', serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+/* INPUT */
+.inputField {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.inputField:focus {
+  border-color: #000;
+}
+
+/* BUTTON */
+.submitButton {
+  padding: 12px 32px;
+  background: #e6663b;
+  color: #fff;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.submitButton:hover {
+  background: #222;
+}
+
+/* LINKS */
+.loginLink {
+  font-size: 14px;
+  color: #555;
+  margin-top: 12px;
+}
+
+.loginLink span {
+  color: #000;
+  cursor: pointer;
+}
+
+.loginLink span:hover {
+  text-decoration: underline;
+}
+
+/* IMAGE PREVIEW */
+.previewContainer {
+  margin-bottom: 10px;
+}
+
+.previewImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .container {
+    margin: 40px 15px;
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .container {
+    margin: 20px 10px;
+    padding: 25px 15px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+
+  .previewImage {
+    width: 100px;
+    height: 100px;
+  }
+}

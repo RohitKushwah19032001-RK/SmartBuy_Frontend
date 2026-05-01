@@ -1,0 +1,136 @@
+
+/* =========================
+   DESKTOP (UNCHANGED)
+========================= */
+
+.wrapper {
+  padding: 20px 150px;
+  margin-top: 10px;
+}
+
+.heading {
+  font-size: 24px;
+  margin-bottom: 40px;
+  font-family: 'Prata';
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.price {
+  color: #322e2b;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+
+  .wrapper {
+    padding: 20px 60px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .image {
+    height: 240px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .wrapper {
+    padding: 15px 20px;
+  }
+
+  .heading {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .image {
+    height: 220px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+
+  .wrapper {
+    padding: 10px 12px;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .image {
+    height: 200px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+}

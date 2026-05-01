@@ -1,0 +1,179 @@
+.navWrapper {
+  position: fixed;
+  top: 2px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+  background: transparent;
+}
+
+.navbar {
+  width: 85%;
+  margin-top: 5px;
+  background: #ffffff;
+  padding: 1px 20px;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+  position: relative;
+  overflow: visible; /* 🔥 IMPORTANT FIX */
+}
+
+/* LOGO */
+.logo img {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* LINKS */
+.navLinks {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLinks a:hover {
+  color: #7b2ff7;
+}
+
+.active {
+  color: #7b2ff7 !important;
+  font-weight: 600;
+}
+
+/* USER */
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userName {
+  font-weight: 600;
+  color: #333;
+}
+
+/* BUTTONS */
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+.loginBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: transparent;
+  color: #333;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+   .navbar {
+    padding: 1px 16px;
+  }
+
+  .logo img {
+    height: 40px;
+    width: 100px;
+  }
+
+  .navLinks {
+    gap: 14px;
+  }
+
+  .userSection {
+    gap: 8px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    width: 95%;
+    flex-wrap: wrap;
+    padding: 8px;
+    height: auto;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* NAV HIDDEN DEFAULT */
+  .navLinks {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    background: white;
+  }
+
+  /* OPEN MENU */
+  .activeMenu {
+    display: flex;
+  }
+
+  .userSection {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+  .logo img {
+    height: 55px;
+    width: 120px;
+  }
+
+  .logoutBtn,
+  .loginBtn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}

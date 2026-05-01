@@ -1,0 +1,151 @@
+.footer {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 60px 80px 20px;
+  margin-top: 20px;
+}
+
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* SECTION */
+.section {
+  margin-right: 20px;
+  margin-left: 100px;
+}
+
+.section h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.section p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* LINKS */
+.section a {
+  display: block;
+  text-decoration: none;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.section a:hover {
+  color: #38bdf8;
+  padding-left: 5px;
+}
+
+/* BOTTOM */
+.bottom {
+  border-top: 1px solid #1e293b;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bottom p {
+  color: #94a3b8;
+  font-size: 16px;
+  margin-left: 43%;
+  padding: 10px;
+}
+
+/* SOCIAL */
+.social {
+  display: flex;
+  align-items: center;
+  font-family: "Parta";
+}
+
+.social svg {
+  margin-left: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social svg:hover {
+  transform: scale(1.2);
+  color: #38bdf8;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 50px 40px 20px;
+  }
+
+  .section {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  .bottom p {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 20px;
+    text-align: center;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .section {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .section p {
+    text-align: center;
+  }
+
+  .section a {
+    text-align: center;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bottom p {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .social {
+    justify-content: center;
+  }
+}

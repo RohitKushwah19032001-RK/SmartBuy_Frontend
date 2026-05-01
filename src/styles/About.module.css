@@ -1,0 +1,85 @@
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 40px;
+  flex-wrap: wrap;
+  font-family: "Prata";
+}
+
+/* IMAGE */
+.imageSection {
+  flex: 1;
+  max-width: 600px;
+}
+
+.imageSection img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* CONTENT */
+.contentSection {
+  flex: 1;
+  max-width: 600px;
+}
+
+.contentSection h1 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-family: "Prata";
+  text-align: center;
+}
+
+.contentSection p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  text-align: left;
+  font-family: "Prata";
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+  .aboutContainer {
+    padding: 50px 30px;
+    gap: 30px;
+  }
+
+  .contentSection h1 {
+    font-size: 32px;
+  }
+
+  .contentSection p {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .aboutContainer {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 25px;
+  }
+
+  .imageSection,
+  .contentSection {
+    max-width: 100%;
+  }
+
+  .contentSection h1 {
+    font-size: 28px;
+  }
+
+  .contentSection p {
+    text-align: center;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,127 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Prata";
+}
+
+/* GRID */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.productCard {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  gap: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.image {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* DETAILS */
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.desc {
+  text-align: left;
+}
+
+/* BUTTON */
+.deleteButton {
+  margin-top: 15px;
+  background-color: #2e2a29;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.deleteButton:hover {
+  background-color: #493a39;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 900px) {
+  .productGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .image {
+    width: 160px;
+    height: 220px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productCard {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .image {
+    width: 100%;
+    height: 220px;
+  }
+
+  .details {
+    align-items: flex-start;
+  }
+
+  /* hover disable for mobile */
+  .productCard:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 400px) {
+  .image {
+    height: 200px;
+  }
+}

@@ -1,0 +1,240 @@
+.vendorNavbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.vendorHeader {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* IMAGE SECTION */
+.imageContainer {
+  width: 300px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.shopImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #3d424d;
+}
+
+/* UPLOAD ICON */
+.uploadIcon {
+  position: absolute;
+  bottom: -4px;
+  right: -20px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  background: #1f2937;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.uploadIcon:hover {
+  background: #374151;
+  transform: scale(1.1);
+}
+
+/* SHOP INFO */
+.shopInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.shopInfo h2 {
+  font-size: 34px;
+  color: #181c24;
+}
+
+.shopInfo p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2b3139;
+}
+
+.shopInfo p span {
+  font-size: 18px;
+  font-weight: 400;
+  color: #475569;
+}
+
+/* NAV LINKS */
+.navLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 15px 0;
+}
+
+.navLinks a {
+  width: 150px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  color: #e5e7eb;
+  background: #1f2937;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.25s;
+}
+
+.navLinks a:hover {
+  background: #374151;
+}
+
+/* ACTIVE */
+.activeLink {
+  background: #7d8596 !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(7, 7, 7, 0.4);
+}
+
+/* LOGOUT */
+.logoutBtn {
+  width: 140px;
+  padding: 8px 42px;
+  border-radius: 25px;
+  background: #171616;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #6e6b6b;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+  .vendorHeader {
+    gap: 30px;
+    padding: 20px;
+  }
+
+    .vendorNavbar {
+    margin-top: 40px;
+  }
+
+  .shopImage {
+    width: 240px;
+    height: 240px;
+  }
+
+  .imageContainer {
+    width: 240px;
+    height: auto;
+  }
+
+  .shopInfo h2 {
+    font-size: 28px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .vendorHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+    .vendorNavbar {
+    margin-top: 40px;
+  }
+
+  .shopInfo {
+    align-items: center;
+  }
+
+  .shopInfo p {
+    text-align: center;
+  }
+
+  .shopImage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .uploadIcon {
+    right: -10px;
+    bottom: -10px;
+  }
+
+  .navLinks a {
+    width: 130px;
+    font-size: 15px;
+  }
+
+  .logoutBtn {
+    width: 120px;
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+  .shopImage {
+    width: 180px;
+    height: 180px;
+  }
+
+  .shopInfo h2 {
+    font-size: 22px;
+  }
+
+  .shopInfo p {
+    font-size: 16px;
+  }
+
+  .navLinks {
+    gap: 10px;
+  }
+}

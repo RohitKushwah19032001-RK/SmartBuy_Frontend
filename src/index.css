@@ -1,0 +1,28 @@
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:'Outfit', sans-serif;
+
+
+}
+
+.swiper-pagination {
+  bottom: 10px !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;   /* change color here */
+  opacity: 0.4 !important;
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background: linear-gradient(45deg, #ff6a00, #ff3c00)!important;
+  opacity: 1 !important;
+  transform: scale(1.2);
+}
+
+
+

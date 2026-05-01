@@ -1,0 +1,742 @@
+.home {
+  padding: 10px 40px;
+}
+
+/* HERO */
+
+
+
+.slide {
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 120px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* LEFT DARK OVERLAY */
+.darkOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+}
+
+/* RIGHT DARK OVERLAY */
+.rightOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+}
+
+/* TEXT CONTENT */
+.overlay {
+  position: relative;
+  color: white;
+  max-width: 550px;
+  z-index: 2;
+}
+
+/* RIGHT SIDE (ONLY 2ND SLIDE) */
+.rightContent {
+  margin-left: auto;
+  text-align: right;
+}
+
+/* TEXT */
+.overlay h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.overlay p {
+  font-size: 18px;
+  margin-bottom: 22px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* FIX: right slide ka text bhi right align ho */
+.rightContent p {
+  text-align: right;
+}
+
+/* BUTTON */
+.overlay button {
+  padding: 14px 62px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff6a00, #ff3c00);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.overlay button:hover {
+  transform: scale(1.05);
+}
+
+
+/* SECTION */
+.section {
+  margin-top: 40px;
+  padding-left: 160px;
+  padding-right: 140px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.sectionHeader h2{
+  font-family: "Prata";
+  margin-left: 20px;
+}
+
+/* PRODUCTS */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-top: 20px;
+
+}
+
+
+
+/* HEADER BUTTON RIGHT ALIGN */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 60px;
+}
+
+/* PRODUCT CARD */
+.card {
+  width: 360px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.card h4 {
+  margin: 10px 0;
+}
+
+/* VIEW BUTTON */
+.cardBtn {
+  padding: 8px 22px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cardBtn:hover{
+ background-color: rgb(80, 77, 77);
+ color: rgb(249, 247, 247);
+}
+
+
+/* SHOP SECTION MAIN */
+.shopSection {
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+/* LEFT IMAGE */
+.shopLeft {
+  width: 100%;
+  position: relative;
+}
+
+.shopLeft img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  border-radius: 10px;
+
+}
+
+/* OVERLAY MAIN */
+.shopOverlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  align-items: center;   /* 🔥 ye line add kar */
+  text-align: right;       /* text bhi right align */
+
+  padding: 10px 20px; 
+  padding-left: 52%; 
+
+  gap:40px;
+  color: rgb(105, 103, 103);
+
+  /* DARK GRADIENT FOR READABILITY
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  ); */
+}
+
+/* TOP EMPTY SPACE */
+.topSpace {
+  height: 60px;
+}
+
+/* SHOP CARDS CONTAINER */
+.shopRight {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* SINGLE CARD */
+.shopCard {
+
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+
+}
+
+.shopCard:hover {
+  transform: translateY(-5px);
+}
+
+/* CARD IMAGE */
+.shopCard img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* CARD TEXT */
+.shopcard1 {
+  padding: 10px;
+}
+
+.shopcard1 h4 {
+  font-size: 15px;
+  margin: 0;
+  color: #373636;
+}
+
+.shopcard1 p {
+  font-size: 12px;
+  color: #171515;
+  margin-top: 5px;
+}
+
+/* BOTTOM TEXT */
+.shopOverlay1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.shopOverlay1 h2 {
+  font-size: 28px;
+  color: #373636;
+}
+
+.shopOverlay1 p {
+  font-size: 14px;
+  color: #151414;
+  padding: 0;
+}
+
+/* BUTTON */
+.shopOverlay button {
+  padding: 15px 80px;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.shopOverlay button:hover {
+  background: #060303;
+  color: #fff;
+}
+
+/* BANNER */
+
+.bannerContainer{
+  /* position:fixed; */
+  padding-left: 140px;
+  padding-right: 140px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.banner {
+  /* position: fixed; */
+  height: 70vh;
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.bannerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 300px;
+  padding-right: 600px;
+  gap: 20px;
+  color: white;
+}
+
+.bannerContent h1{
+  font-size: 52px;
+  padding-left: 40px;
+}
+.bannerContent p{
+padding: 0;
+padding-left: 20px;
+line-height: 1.6;
+}
+
+.bannerContent button{
+  background-color: #fff;
+  color: #555;
+  padding: 12px 32px;
+  font-size: 16px;
+  border-radius: 40px;
+}
+
+/* REELS */
+/* REELS SECTION */
+.reelSection {
+  padding: 20px;
+padding-left: 140px;
+padding-right: 140px;
+  position: relative;
+  width: 100%;            
+  height: 400px;            
+  overflow: hidden;
+}
+
+/* IMAGE FULL WIDTH */
+.reelSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+
+}
+
+/* OVERLAY */
+.reelOverlay {
+  position: absolute;
+  bottom: 40px;
+  left: 380px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px 20px;
+  color: white;
+  text-align: center;
+
+  /* 🔥 gradient */
+  /* background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.4),
+    transparent
+  ); */
+}
+
+/* TEXT */
+.reelOverlay h2 {
+  margin-top: 22px;
+  font-size: 26px;
+}
+
+.reelOverlay p {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #ddd;
+  padding: 0;
+}
+
+/* BUTTON */
+.reelOverlay button {
+  margin-top: 12px;
+  padding: 14px 80px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+
+/* INFO */
+.info {
+  margin-top: 20px;
+  text-align: center;
+  padding: 0 40px;
+  height: 50vh;
+}
+
+.info h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.infoText {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* FEATURES ROW */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.infocard {
+  background: #ffffff;
+  padding: 25px;
+  width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.infocard:hover {
+  transform: translateY(-8px);
+}
+
+.infocard h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.infocard p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+  .shopRight {
+  flex-direction: column;
+}
+
+
+
+/* =========================
+   TABLET (1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .home {
+    padding: 50px 20px;
+  }
+
+  /* HERO */
+  .slide {
+    padding: 0 60px;
+    height: 75vh;
+  }
+
+  .overlay h1 {
+    font-size: 40px;
+  }
+
+  /* SECTION */
+  .section {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  /* SHOP */
+  .shopSection {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+    .shopCard img {
+  height: 200px;
+  object-fit: cover;
+}
+
+  /* BANNER */
+  .bannerContainer {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .bannerContent {
+    padding-right: 0;
+    margin-top: 200px;
+  }
+
+  .bannerContent h1 {
+    font-size: 40px;
+  }
+
+  /* REELS */
+  .reelSection {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .reelOverlay {
+    left: 0;
+    bottom: 20px;
+  }
+
+  /* INFO */
+  .info {
+    height: auto;
+    padding-bottom: 40px;
+  }
+}
+
+
+/* =========================
+   MOBILE (768px)
+========================= */
+@media (max-width: 768px) {
+
+  .home {
+    padding: 30px 10px;
+  }
+
+  /* HERO */
+  .slide {
+    padding: 0 20px;
+    height: 65vh;
+    border-radius: 0;
+  }
+
+  .overlay h1 {
+    font-size: 28px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .overlay button {
+    padding: 10px 30px;
+  }
+
+  /* SECTION */
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  /* SHOP */
+  .shopSection {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .shopOverlay {
+    padding-left: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .shopRight {
+    flex-direction: column;
+  }
+
+  .shopCard {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  }
+
+  .shopCard img {
+  height: 140px;
+  object-fit: cover;
+}
+
+  /* BANNER */
+  .bannerContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .banner {
+    height: 50vh;
+  }
+
+  .bannerContent {
+    margin-top: 120px;
+    padding-right: 0;
+  }
+
+  .bannerContent h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  /* REELS */
+  .reelSection {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 300px;
+  }
+
+  .reelOverlay {
+    left: 0;
+    padding: 10px;
+  }
+
+  .reelOverlay h2 {
+    font-size: 18px;
+  }
+
+  .reelOverlay p {
+    font-size: 12px;
+  }
+
+  /* INFO */
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infocard {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE (480px)
+========================= */
+@media (max-width: 480px) {
+
+  .overlay h1 {
+    font-size: 22px;
+  }
+
+  .bannerContent h1 {
+    font-size: 20px;
+  }
+
+  .shopOverlay button {
+    padding: 10px 40px;
+  }
+}
