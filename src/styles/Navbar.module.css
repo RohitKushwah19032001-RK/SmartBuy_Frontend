@@ -103,25 +103,54 @@
 /* =========================
    TABLET
 ========================= */
+@TABLET (768px - 1024px)
+========================= */
 @media (max-width: 1024px) {
-   .navbar {
-    padding: 1px 16px;
+
+  .navbar {
+    width: 92%;
+    padding: 4px 14px;
+    flex-wrap: wrap;
   }
 
   .logo img {
-    height: 40px;
-    width: 100px;
+    height: 50px;
+    width: auto;
   }
 
   .navLinks {
-    gap: 14px;
+    gap: 16px;
+    font-size: 15px;
+  }
+
+  .navLinks a {
+    font-size: 14px;
   }
 
   .userSection {
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .userName {
+    font-size: 14px;
+  }
+
+  .logoutBtn,
+  .loginBtn {
+    padding: 6px 12px;
+    font-size: 14px;
   }
 }
 
+@media (max-width: 900px) {
+  .navLinks {
+    gap: 12px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+}
 /* =========================
    MOBILE
 ========================= */
