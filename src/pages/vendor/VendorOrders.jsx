@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../../styles/vendorOrder.module.css";
+import styles from "../../styles/VendorOrder.module.css";
 import VendorNavbar from "../../components/VendorNavbar";
 import { toast } from "react-toastify";
 import API from "../../../api.js";
