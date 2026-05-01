@@ -97,7 +97,7 @@
 @media (max-width: 1024px) {
 
   .container {
-    padding: 0 60px;
+    padding: 40px 20px;
   }
 
   .grid {
@@ -149,6 +149,10 @@
    SMALL MOBILE
 ========================= */
 @media (max-width: 480px) {
+  
+  .container {
+    padding: 40px 20px;
+  }
   
   .card {
     height: 80vh;
