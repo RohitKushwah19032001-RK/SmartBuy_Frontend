@@ -135,7 +135,7 @@
   }
 
   .reelCard {
-    height: 100vh;
+    height: 80vh;
     margin-top: 0;
   }
 
@@ -179,7 +179,7 @@
 
   .pageWrapper {
     /* height: 100vh; */
-    padding-top: 20px;
+    padding-top: 40px;
 
     
   }
