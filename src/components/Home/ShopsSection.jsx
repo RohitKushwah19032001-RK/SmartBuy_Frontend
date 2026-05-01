@@ -31,7 +31,7 @@ const ShopsSection = ({ shops, storeImg }) => {
 
           {/* BOTTOM CONTENT */}
           <div className={styles.shopOverlay1}>
-            <h2>Shop Smart with SmartBuy</h2>
+            <h4>Shop Smart with SmartBuy</h4>
             <p>Discover nearby stores and shop smarter every day.</p>
 
             <button onClick={() => navigate("/shops")}>

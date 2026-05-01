@@ -238,13 +238,13 @@
 
 /* TOP EMPTY SPACE */
 .topSpace {
-  height: 60px;
+  height: 20px;
 }
 
 /* SHOP CARDS CONTAINER */
 .shopRight {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -307,8 +307,8 @@
   margin-bottom: 20px;
 }
 
-.shopOverlay1 h2 {
-  font-size: 28px;
+.shopOverlay1 h4 {
+  font-size: 22px;
   color: #373636;
 }
 

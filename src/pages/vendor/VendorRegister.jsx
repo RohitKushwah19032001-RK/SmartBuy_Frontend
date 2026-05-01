@@ -225,7 +225,7 @@ const VendorRegister = () => {
           type="submit"
           disabled={loading}
         >
-          {loading ? "Please wait..." : "Join Now only with ₹50"}
+          {loading ? "Please wait..." : "Register Your Shop"}
         </button>
 
         <p onClick={() => navigate("/vendor/login")}>Login</p>
