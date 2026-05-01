@@ -1,3 +1,3 @@
-const API = "http://localhost:8000"
+const API = "https://smartbuy-backend-z140.onrender.com"
 
 export default API
