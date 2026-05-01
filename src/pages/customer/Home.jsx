@@ -35,7 +35,7 @@ const Home = () => {
 
   const fetchShops = async () => {
     const { data } = await axios.get(`${API}/api/shop/all`);
-    setShops(data.shops.slice(0, 2));
+    setShops(data.shops.slice(0, 1));
   };
 
   return (
