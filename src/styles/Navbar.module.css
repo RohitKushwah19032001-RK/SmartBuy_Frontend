@@ -100,45 +100,50 @@
   cursor: pointer;
 }
 
-/* =========================
-   TABLET
-========================= */
-@TABLET (768px - 1024px)
-========================= */
-@media (max-width: 1024px) {
+
+@media (min-width: 768px) and (max-width: 1280px) {
 
   .navbar {
-    width: 92%;
-    padding: 4px 14px;
-    flex-wrap: wrap;
+    width: 95%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
   .logo img {
-    height: 50px;
+    height: 45px;
     width: auto;
   }
 
   .navLinks {
-    gap: 16px;
-    font-size: 15px;
+    gap: 12px;
+    font-size: 14px;
+    flex-wrap: nowrap;
   }
 
   .navLinks a {
-    font-size: 14px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .userSection {
-    gap: 10px;
+    gap: 8px;
+    white-space: nowrap;
   }
 
   .userName {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .logoutBtn,
   .loginBtn {
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .hamburger {
+    font-size: 24px;
   }
 }
 
