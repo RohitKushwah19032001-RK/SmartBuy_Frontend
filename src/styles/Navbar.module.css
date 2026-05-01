@@ -134,13 +134,13 @@
     padding: 8px 0;
   }
 
-    .userSection {
+    /* .userSection {
     flex: 1 100%;
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 5px;
-  }
+  } */
 
 
   .navLinks a {
