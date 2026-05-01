@@ -101,7 +101,7 @@
 }
 
 
-@@media (min-width: 768px) and (max-width: 1380px) {
+@media (min-width: 768px) and (max-width: 1380px) {
 
   .navbar {
     width: 95%;
