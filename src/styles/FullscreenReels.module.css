@@ -119,19 +119,12 @@
 ========================= */
 @media (max-width: 768px) {
 
-    .container {
-    
-  padding-top: 50px;
-
+   .pageWrapper {
+    padding-top: 60px; 
   }
 
-
-  .pageWrapper {
-    height: 90vh;
-   padding-top: 40px;
-
-
-    
+  .container {
+    padding-top: 60px;
   }
 
 
@@ -139,7 +132,7 @@
 
   .reelCard {
     height: 80vh;
-    margin-top: 0;
+    margin-top:40px;
   }
 
   .video {
