@@ -121,32 +121,31 @@
 ========================= */
 @media (max-width: 768px) {
 
-   .pageWrapper {
-    padding-top: 80px; 
+    .pageWrapper {
+    padding-top: 100px; /* ✅ Insta-like top spacing */
     width: 100%;
+    height: 100vh;
   }
 
   .container {
-    padding-top: 80px;
+    width: 100%;
+    padding-top: 0; /* ❌ remove extra spacing */
   }
 
-
-
-
   .reelCard {
-    height: 80vh;
-    margin-top:40px;
+    height: calc(100vh - 100px);
+    margin-top: 0;
   }
 
   .video {
-    height: 80vh;
+    height: 100%;
     border-radius: 0;
   }
 
-  /* ✅ ONLY CHANGE: BACK BUTTON FIXED OVERLAY */
+  /* back button */
   .close {
-    position: fixed;   /* 🔥 important fix */
-    top: 125px;
+    position: fixed;
+    top: 110px; /* slightly below 100px padding */
     left: 15px;
     z-index: 9999;
 
