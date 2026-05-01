@@ -101,14 +101,22 @@
 }
 
 
-@media (min-width: 768px) and (max-width: 1280px) {
+@@media (min-width: 768px) and (max-width: 1380px) {
 
   .navbar {
     width: 95%;
-    padding: 10px 14px;
+    padding: 10px 16px;
     border-radius: 14px;
-    flex-wrap: nowrap;
-    align-items: center;
+
+    display: flex;
+    flex-wrap: wrap;   /* 🔥 IMPORTANT */
+    height: auto;      /* 🔥 FIX HEIGHT ISSUE */
+    gap: 10px;
+  }
+
+  /* LOGO */
+  .logo {
+    flex: 1;
   }
 
   .logo img {
@@ -116,10 +124,14 @@
     width: auto;
   }
 
+  /* NAV LINKS */
   .navLinks {
-    gap: 12px;
-    font-size: 14px;
-    flex-wrap: nowrap;
+    flex: 1 100%;      /* 🔥 takes full row */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px 0;
   }
 
   .navLinks a {
@@ -127,9 +139,13 @@
     white-space: nowrap;
   }
 
+  /* USER SECTION (REGISTER/LOGIN FIX) */
   .userSection {
-    gap: 8px;
-    white-space: nowrap;
+    flex: 1 100%;      /* 🔥 moves to next row */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
   }
 
   .userName {
@@ -138,22 +154,12 @@
 
   .logoutBtn,
   .loginBtn {
-    padding: 5px 10px;
+    padding: 6px 12px;
     font-size: 13px;
   }
 
   .hamburger {
     font-size: 24px;
-  }
-}
-
-@media (max-width: 900px) {
-  .navLinks {
-    gap: 12px;
-  }
-
-  .navbar {
-    justify-content: space-between;
   }
 }
 /* =========================
