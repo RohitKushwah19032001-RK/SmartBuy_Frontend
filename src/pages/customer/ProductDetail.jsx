@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import styles from "../../styles/ProductDetail.module.css";
 import SimilarProducts from "../../components/SimilarProducts";
 import {toast} from 'react-toastify'
+import API from '../../../api.js'
 
 const ProductDetail = ({ setCartCount }) => {
   const { id } = useParams();
@@ -23,11 +24,11 @@ const ProductDetail = ({ setCartCount }) => {
         setLoading(true);
 
         const productRes = await axios.get(
-          `http://localhost:8000/api/product/${id}`
+          `${API}/api/product/${id}`
         );
 
         const allRes = await axios.get(
-          "http://localhost:8000/api/product/all"
+          `${API}/api/product/all`
         );
 
         setProduct(productRes.data.product);
@@ -48,7 +49,7 @@ const ProductDetail = ({ setCartCount }) => {
       setLoadingAmazon(true);
 
       const { data } = await axios.get(
-        `http://localhost:8000/api/product/compare-amazon/${id}`
+        `${API}/api/product/compare-amazon/${id}`
       );
 
       setAmazonData(data);
@@ -63,13 +64,13 @@ const ProductDetail = ({ setCartCount }) => {
   const addToCart = async () => {
     try {
       await axios.post(
-        "http://localhost:8000/api/cart/add",
+        `${API}/api/cart/add`,
         { productId: product._id, quantity: 1 },
         { withCredentials: true }
       );
 
       setCartCount((prev) => prev + 1);
-      toast.success("✅ Added to cart");
+      toast.success("Added to cart");
     } catch (error) {
       if (error.response?.status === 401) {
         toast.warning("Please login first");;
@@ -84,7 +85,7 @@ const ProductDetail = ({ setCartCount }) => {
   const comparePrice = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/product/compare/${id}`
+        `${API}/api/product/compare/${id}`
       );
 
       if (data.googleCompareLink) {
