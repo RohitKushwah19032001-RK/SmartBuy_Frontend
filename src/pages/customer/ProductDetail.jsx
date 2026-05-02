@@ -17,22 +17,18 @@ const ProductDetail = ({ setCartCount }) => {
   const [amazonData, setAmazonData] = useState(null);
   const [loadingAmazon, setLoadingAmazon] = useState(false);
 
-  // 🔥 FETCH DATA
+  // 🔥 FETCH PRODUCT DATA
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
 
-        const productRes = await axios.get(
-          `${API}/api/product/${id}`
-        );
-
-        const allRes = await axios.get(
-          `${API}/api/product/all`
-        );
+        const productRes = await axios.get(`${API}/api/product/${id}`);
+        const allRes = await axios.get(`${API}/api/product/all`);
 
         setProduct(productRes.data.product);
         setAllProducts(allRes.data.products);
+
       } catch (error) {
         console.log("Fetch Error:", error);
         toast.error("Failed to load product");
@@ -44,12 +40,10 @@ const ProductDetail = ({ setCartCount }) => {
     fetchData();
   }, [id]);
 
-  // 🔥 ADD TO CART (FINAL FIX)
+  // 🔥 ADD TO CART
   const addToCart = async () => {
     try {
       const token = localStorage.getItem("token");
-
-      console.log("TOKEN:", token); // debug
 
       if (!token) {
         toast.warning("Please login first");
@@ -88,7 +82,7 @@ const ProductDetail = ({ setCartCount }) => {
     }
   };
 
-  // 🔥 AMAZON
+  // 🔥 AMAZON COMPARE (FIXED)
   const compareAmazon = async () => {
     try {
       setLoadingAmazon(true);
@@ -98,7 +92,9 @@ const ProductDetail = ({ setCartCount }) => {
       );
 
       setAmazonData(data);
-    } catch {
+
+    } catch (error) {
+      console.log(error);
       toast.error("Failed to compare");
     } finally {
       setLoadingAmazon(false);
@@ -156,6 +152,34 @@ const ProductDetail = ({ setCartCount }) => {
               {loadingAmazon ? "Checking..." : "Compare with Amazon"}
             </button>
           </div>
+
+          {/* 🔥 AMAZON RESULT (NEW ADDITION - NO CSS CHANGE) */}
+          {amazonData && amazonData.success && (
+            <div style={{ marginTop: "20px" }}>
+              <h3>🛒 Amazon Comparison</h3>
+
+              <p>
+                <b>Local Price:</b> ₹{amazonData.local.price}
+              </p>
+
+              <p>
+                <b>Amazon Price:</b>{" "}
+                {amazonData.amazon.price
+                  ? `₹${amazonData.amazon.price}`
+                  : "Not available"}
+              </p>
+
+              {amazonData.amazon.link && (
+                <a
+                  href={amazonData.amazon.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on Amazon
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
