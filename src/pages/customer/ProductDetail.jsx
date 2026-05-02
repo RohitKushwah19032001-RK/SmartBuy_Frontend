@@ -120,8 +120,9 @@ const ProductDetail = ({ setCartCount }) => {
           />
         </div>
 
-        <div className={styles.right}>
-          <h1 className={styles.title}>{product?.productName}</h1>
+          <div style={{ fontWeight: "normal", fontSize: "18px" }}>
+              {product?.productName}
+            </div>
           <h2 className={styles.price}>₹ {product?.price}</h2>
 
           <h3 className={styles.shopName}>
