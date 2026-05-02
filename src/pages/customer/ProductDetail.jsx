@@ -62,24 +62,40 @@ const ProductDetail = ({ setCartCount }) => {
 
   // 🔥 ADD TO CART
   const addToCart = async () => {
-    try {
-      await axios.post(
-        `${API}/api/cart/add`,
-        { productId: product._id, quantity: 1 },
-        { withCredentials: true }
-      );
+  try {
+    const token = localStorage.getItem("token");
 
-      setCartCount((prev) => prev + 1);
-      toast.success("Added to cart");
-    } catch (error) {
-      if (error.response?.status === 401) {
-        toast.warning("Please login first");;
-        navigate("/register");
-      } else {
-        toast.error("Something went wrong");
-      }
+    if (!token) {
+      toast.warning("Please login first");
+      navigate("/login");
+      return;
     }
-  };
+
+    await axios.post(
+      `${API}/api/cart/add`,
+      { productId: product._id, quantity: 1 },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    setCartCount((prev) => prev + 1);
+    toast.success("Added to cart");
+
+  } catch (error) {
+    console.log(error);
+
+    if (error.response?.status === 401) {
+      toast.warning("Session expired, login again");
+      localStorage.removeItem("token");
+      navigate("/login");
+    } else {
+      toast.error("Something went wrong");
+    }
+  }
+};
 
   // 🔥 GOOGLE COMPARE
   const comparePrice = async () => {
