@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import axios from "axios";
 import { useParams , useNavigate } from "react-router-dom";
-
+import API from '../../../api.js'
 import styles from "../../styles/SingleShop.module.css";
 
 const SingleShop = ()=>{
