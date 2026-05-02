@@ -3,8 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import styles from "../../styles/ProductDetail.module.css";
 import SimilarProducts from "../../components/SimilarProducts";
-import { toast } from "react-toastify";
-import API from "../../../api.js";
+import {toast} from 'react-toastify'
 
 const ProductDetail = ({ setCartCount }) => {
   const { id } = useParams();
@@ -17,21 +16,24 @@ const ProductDetail = ({ setCartCount }) => {
   const [amazonData, setAmazonData] = useState(null);
   const [loadingAmazon, setLoadingAmazon] = useState(false);
 
-  // 🔥 FETCH PRODUCT DATA
+  // 🔥 FETCH DATA
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
 
-        const productRes = await axios.get(`${API}/api/product/${id}`);
-        const allRes = await axios.get(`${API}/api/product/all`);
+        const productRes = await axios.get(
+          `http://localhost:8000/api/product/${id}`
+        );
+
+        const allRes = await axios.get(
+          "http://localhost:8000/api/product/all"
+        );
 
         setProduct(productRes.data.product);
         setAllProducts(allRes.data.products);
-
       } catch (error) {
         console.log("Fetch Error:", error);
-        toast.error("Failed to load product");
       } finally {
         setLoading(false);
       }
@@ -40,69 +42,64 @@ const ProductDetail = ({ setCartCount }) => {
     fetchData();
   }, [id]);
 
+  // 🔥 AMAZON COMPARE
+  const compareAmazon = async () => {
+    try {
+      setLoadingAmazon(true);
+
+      const { data } = await axios.get(
+        `http://localhost:8000/api/product/compare-amazon/${id}`
+      );
+
+      setAmazonData(data);
+    } catch (error) {
+      console.log("Amazon Compare Error:", error);
+    } finally {
+      setLoadingAmazon(false);
+    }
+  };
+
   // 🔥 ADD TO CART
   const addToCart = async () => {
     try {
-      const token = localStorage.getItem("token");
-
-      if (!token) {
-        toast.warning("Please login first");
-        navigate("/register");
-        return;
-      }
-
-      if (!product?._id) {
-        toast.error("Invalid product");
-        return;
-      }
-
       await axios.post(
-        `${API}/api/cart/add`,
-        { productId: product._id },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        "http://localhost:8000/api/cart/add",
+        { productId: product._id, quantity: 1 },
+        { withCredentials: true }
       );
 
       setCartCount((prev) => prev + 1);
       toast.success("✅ Added to cart");
-
     } catch (error) {
-      console.log("Add To Cart Error:", error);
-
       if (error.response?.status === 401) {
-        toast.warning("Session expired, login again");
-        localStorage.removeItem("userToken");
-        navigate("/login");
+        toast.warning("Please login first");;
+        navigate("/register");
       } else {
         toast.error("Something went wrong");
       }
     }
   };
 
-  // 🔥 AMAZON COMPARE (FIXED)
-  const compareAmazon = async () => {
+  // 🔥 GOOGLE COMPARE
+  const comparePrice = async () => {
     try {
-      setLoadingAmazon(true);
-
       const { data } = await axios.get(
-        `${API}/api/product/compare-amazon/${id}`
+        `http://localhost:8000/api/product/compare/${id}`
       );
 
-      setAmazonData(data);
-
+      if (data.googleCompareLink) {
+        window.open(data.googleCompareLink, "_blank");
+      } else {
+        toast.info("Compare link not available");
+      }
     } catch (error) {
-      console.log(error);
-      toast.error("Failed to compare");
-    } finally {
-      setLoadingAmazon(false);
+      console.log("Compare Error:", error);
     }
   };
 
-  // 🔥 LOADING
+  // 🔥 LOADING UI
   if (loading) return <h2>Loading product...</h2>;
+
   if (!product) return <h2>Product not found</h2>;
 
   return (
@@ -153,33 +150,55 @@ const ProductDetail = ({ setCartCount }) => {
             </button>
           </div>
 
-          {/* 🔥 AMAZON RESULT (NEW ADDITION - NO CSS CHANGE) */}
-          {amazonData && amazonData.success && (
-            <div style={{ marginTop: "20px" }}>
-              <h3>🛒 Amazon Comparison</h3>
+          {/* 🔥 AMAZON RESULT */}
+          {amazonData && (
+            <div className={styles.amazonContainer}>
+              <h3>Amazon Price</h3>
 
-              <p>
-                <b>Local Price:</b> ₹{amazonData.local.price}
-              </p>
+              <div className={styles.amazonBox}>
+                <div className={styles.amazonBox2}>
+                  {amazonData.amazonImage && (
+                    <img
+                      src={amazonData.amazonImage}
+                      alt="amazon"
+                      className={styles.amazonImage}
+                    />
+                  )}
 
-              <p>
-                <b>Amazon Price:</b>{" "}
-                {amazonData.amazon.price
-                  ? `₹${amazonData.amazon.price}`
-                  : "Not available"}
-              </p>
+                  {amazonData.amazonLink && (
+                    <a
+                      href={amazonData.amazonLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.amazonLink}
+                    >
+                      View on Amazon
+                    </a>
+                  )}
+                </div>
 
-              {amazonData.amazon.link && (
-                <a
-                  href={amazonData.amazon.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View on Amazon
-                </a>
-              )}
+                <div className={styles.amazonBox1}>
+                  {amazonData.amazonPrice ? (
+                    <>
+                      <p>
+                        {product?.shopId?.shopName} Price: ₹{" "}
+                        {amazonData.localPrice}
+                      </p>
+                      <p>Amazon Price: ₹ {amazonData.amazonPrice}</p>
+                    </>
+                  ) : (
+                    <p className={styles.notFound}>
+                      Product not found on Amazon
+                    </p>
+                  )}
+                </div>
+              </div>
             </div>
           )}
+
+          <p className={styles.compareBtng} onClick={comparePrice}>
+            🔍 Compare on Google Shopping
+          </p>
         </div>
       </div>
 
