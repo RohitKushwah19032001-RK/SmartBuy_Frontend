@@ -32,6 +32,11 @@
   cursor: pointer;
 }
 
+.logo h2{
+  font-family: "Cause", cursive;
+  font-size: 24px;
+}
+
 /* LINKS */
 .navLinks {
   display: flex;
@@ -124,6 +129,11 @@
     width: 100%;
   }
 
+  .logo h2{
+  font-family: "Cause", cursive;
+  font-size: 22px;
+}
+
   .logo img {
     height: 42px;
     width: auto;
@@ -178,6 +188,10 @@
     height: auto;
   }
 
+    .logo h2{
+  font-family: "Cause", cursive;
+  font-size: 22px;
+}
   .hamburger {
     display: block;
   }
@@ -220,4 +234,8 @@
     font-size: 13px;
     padding: 6px 10px;
   }
+      .logo h2{
+  font-family: "Cause", cursive;
+  font-size: 22px;
+}
 }

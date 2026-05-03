@@ -96,7 +96,8 @@ const Navbar = ({ cartCount, setCartCount }) => {
 
           {/* LOGO */}
           <div className={styles.logo}>
-            <img src={logo} alt="logo" onClick={() => navigate("/")} />
+            {/* <img src={logo} alt="logo" onClick={() => navigate("/")} /> */}
+            <h2>SmartBuy</h2>
           </div>
 
           {/* HAMBURGER */}
