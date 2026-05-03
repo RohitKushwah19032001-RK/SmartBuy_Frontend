@@ -26,6 +26,9 @@
 }
 
 
+.logo{
+  padding: 10px 16px;
+}
 .logo h2{
   font-family: "Cause", cursive;
   font-size: 28px;
