@@ -29,6 +29,8 @@
 .logo h2{
   font-family: "Cause", cursive;
   font-size: 28px;
+  height: 60px;
+    width: auto;
 }
 
 /* LOGO */
@@ -132,8 +134,10 @@
   }
 
   .logo h2{
-  font-family: "Cause", cursive;
+  font-family: "Cause";
   font-size: 22px;
+     height: 42px;
+    width: auto;
 }
 
   .logo img {
@@ -191,8 +195,10 @@
   }
 
     .logo h2{
-  font-family: "Cause", cursive;
+  font-family: "Cause";
   font-size: 22px;
+   height: 42px;
+    width: auto;
 }
   .hamburger {
     display: block;
@@ -237,7 +243,9 @@
     padding: 6px 10px;
   }
       .logo h2{
-  font-family: "Cause", cursive;
+  font-family: "Cause";
   font-size: 22px;
+   height: 42px;
+    width: auto;
 }
 }
