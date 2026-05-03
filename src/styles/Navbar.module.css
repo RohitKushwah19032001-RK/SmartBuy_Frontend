@@ -14,7 +14,9 @@
   width: 85%;
   margin-top: 5px;
   background: #ffffff;
-  padding: 1px 30px;
+  padding: 1px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 18px;
 
   display: flex;
