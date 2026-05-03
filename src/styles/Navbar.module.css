@@ -32,6 +32,7 @@
   height: 60px;
     width: auto;
      padding: 16px;
+     padding-bottom: 10px;
 
 }
 
@@ -141,6 +142,8 @@
      height: 42px;
     width: auto;
      padding: 8px;
+     padding-bottom: 4px;
+
 }
 
   .logo img {
@@ -202,7 +205,9 @@
   font-size: 22px;
    height: 42px;
     width: auto;
-    padding: 5px;
+    padding: 6px;
+     padding-bottom: 4px;
+
 }
   .hamburger {
     display: block;
@@ -252,6 +257,8 @@
    height: 42px;
     width: auto;
      padding: 8px;
+     padding-bottom: 4px;
+
 
 }
 }
