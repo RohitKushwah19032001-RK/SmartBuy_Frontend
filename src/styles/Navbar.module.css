@@ -1,11 +1,12 @@
 .navWrapper {
   position: fixed;
-  top: 10px;
+  top:2px;
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 9999;
   background: transparent;
+  margin-top: 6px;
 }
 
 .navbar {
